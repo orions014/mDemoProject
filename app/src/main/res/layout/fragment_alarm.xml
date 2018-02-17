@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mcaredemo.mitu.mcaredemoproject.DetailsFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="5.6"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        >
+
+        <TextView
+            android:id="@+id/textViewtitle_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            android:text="@string/rules_answer"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewScore_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="8sp"
+            android:textColor="@color/loginButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewScore_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_1"
+            app:layout_constraintBottom_toTopOf="@+id/buttoncommunity_1"
+            />
+
+
+
+        <Button
+            android:id="@+id/buttoncommunity_1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            android:text="@string/emergency_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/button_border_focus_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/backgroundColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewScore_1" />
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

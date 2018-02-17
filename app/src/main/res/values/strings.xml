@@ -7,12 +7,15 @@
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">গত দুই মাসে আপনার শিশুর সমস্যা গুলোর প্রগতি/ অবগতি গুলো। </string>
     <string name="Title_of_home">বর্তমানে আপনার সন্তানের প্রধান সমস্যা গুলো</string>
     <string name="emergency_button">জরুরী সমস্যা</string>
 
     <string name="community">কমিউনিটি</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="answering_rules">প্রশ্ন গুলোর উত্তর কিভাবে মুল্যায়ণ করা হচ্ছে তা বুঝতে এখানে ক্লিক করুন।</string>
+    <string name="rules_answer"> আপনি ০ থেকে ১০ এর ভেতর মুল্যায়ন নাম্বার দিতে পারবেন । ০ অর্থ এধরনের সমস্যা হয় নি , ১ থেকে ৩  অর্থ এধরনের সমস্যা খুবই বিরল,
+    ৪ থেকে ৫ অর্থ এধরনের সমস্যা কম বিরল ,৬ থেকে ৭ অর্থ এধরনের সমস্যা কখনো কখনো ঘটে থাকে , ৮ থেকে ৯ অর্থ এধরনের সমস্যা অনেক সময়ই ঘটে থাকে , ১০ অর্থ এধরনের সমস্যা সব সময়ই ঘটে ।</string>
 
 
 </resources>

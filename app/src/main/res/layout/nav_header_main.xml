@@ -39,5 +39,12 @@
         android:layout_height="wrap_content"
         android:textColor="@color/textColor"
         android:text="www.macare-demo.com" />
+    <TextView
+        android:id="@+id/textViewwebnamewidth"
+        android:layout_width="match_parent"
+        android:layout_height="1.4dp"
+        android:background="@color/assButton"
+         />
+
 
 </LinearLayout>
