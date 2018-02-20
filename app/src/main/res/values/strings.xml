@@ -4,10 +4,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">লগ আউট</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">গত দুই মাসে আপনার শিশুর সমস্যা গুলোর প্রগতি/ অবগতি গুলো। </string>
+    <string name="hello_blank_fragment">গত এক মাসে আপনার শিশুর সমস্যা গুলোর প্রগতি/ অবগতি গুলো। </string>
     <string name="Title_of_home">বর্তমানে আপনার সন্তানের প্রধান সমস্যা গুলো</string>
     <string name="emergency_button">জরুরী সমস্যা</string>
 

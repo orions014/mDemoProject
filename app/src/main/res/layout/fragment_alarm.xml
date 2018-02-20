@@ -30,40 +30,93 @@
             android:layout_height="0dp"
             android:layout_weight=".6"
             android:text="@string/rules_answer"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerViewScore_1"
+            app:layout_constraintBottom_toTopOf="@+id/textViewtitle_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:textSize="8sp"
             android:textColor="@color/loginButton"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textViewtitle_2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".01"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerViewScore_1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/bottomButton"
+             />
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewScore_1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4.4"
+            android:layout_weight="4.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_2"
             app:layout_constraintBottom_toTopOf="@+id/buttoncommunity_1"
             />
 
 
 
-        <Button
+        <LinearLayout
             android:id="@+id/buttoncommunity_1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".6"
-            android:text="@string/emergency_button"
+            android:layout_weight=".4"
+            android:weightSum="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:background="@drawable/button_border_focus_layout"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/backgroundColor"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerViewScore_1" />
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewScore_1"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btnprogress"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="অগ্রগতি"
+                android:textColor="@color/backgroundColor"
+                android:layout_margin="2dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_border_focus_layout"/>
+
+            <Button
+                android:id="@+id/btnnewproblem"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="নতুন সমস্যা"
+                android:textColor="@color/backgroundColor"
+                android:layout_margin="2dp"
+                android:textStyle="bold"
+
+                android:background="@drawable/button_border_focus_layout"/>
+
+
+            <Button
+                android:id="@+id/btnemergency"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="জরুরী সমস্যা"
+                android:textColor="@color/backgroundColor"
+                android:layout_margin="2dp"
+                android:textStyle="bold"
+                android:background="@drawable/button_border_focus_layout"/>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

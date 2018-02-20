@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height=".4dp"
-        android:background="@color/bottomButton"
+        android:background="#26000000"
         android:id="@+id/textviewwidthclor"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/newalarmlist_layout"

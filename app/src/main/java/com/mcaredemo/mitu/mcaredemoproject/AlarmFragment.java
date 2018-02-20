@@ -1,6 +1,8 @@
 package com.mcaredemo.mitu.mcaredemoproject;
 
 
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.QuickContactBadge;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ public class AlarmFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
+    Button btnprogress , btnEmergency , btnNewProblem;
     private String[] mDataset = {"একই শব্দের পুনরাবৃতি",
             "অর্থহীন শব্দের ব্যবহার্‌ ",
             "সর্বনাম পদের ভুল ব্যবহার (উদাহরণ স্বরুপ আমি এর পরিবর্তে তুমি ব্যবহার)",
@@ -57,7 +61,11 @@ public class AlarmFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View view = inflater.inflate(R.layout.fragment_alarm, container, false);
+         View view = inflater.inflate(R.layout.fragment_alarm, container, false);
+
+        btnprogress = (Button) view.findViewById(R.id.btnprogress);
+        btnEmergency = view.findViewById(R.id.btnemergency);
+        btnNewProblem = view.findViewById(R.id.btnnewproblem);
 
 
 
@@ -69,6 +77,49 @@ public class AlarmFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setNestedScrollingEnabled(false);
 
+        btnprogress.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new NewSpecificScoreFragment();
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.containerHome, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
+
+
+        btnEmergency.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+
+                Fragment fragment = new NewSpecificScoreFragment();
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.containerHome, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
+
+
+        btnNewProblem.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+
+
+            }
+        });
         return view ;
     }
 
