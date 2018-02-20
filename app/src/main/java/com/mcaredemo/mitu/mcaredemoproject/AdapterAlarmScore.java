@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,14 +38,16 @@ public class AdapterAlarmScore extends RecyclerView.Adapter<AdapterAlarmScore.Cu
     public static class CustomViewHolder extends RecyclerView.ViewHolder {
         private TextView mNameTextView;
         private CardView mCArdView;
-        Spinner sp;
+       // Spinner sp;
+        private ImageButton mButton;
 
 
 
         public CustomViewHolder(View view){
             super(view);
             mNameTextView = (TextView) view.findViewById(R.id.problemTextViewScore_1);
-            sp = (Spinner) view.findViewById(R.id.spinnernumber_1);
+           // sp = (Spinner) view.findViewById(R.id.spinnernumber_1);
+            mButton = (ImageButton) view.findViewById(R.id.spinnernumber_1);
 
 
 
@@ -65,7 +69,7 @@ public class AdapterAlarmScore extends RecyclerView.Adapter<AdapterAlarmScore.Cu
 
 
 
-        holder.sp.setAdapter(mArrayAdapter);
+       /* holder.sp.setAdapter(mArrayAdapter);
 
 
         holder.sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -78,7 +82,15 @@ public class AdapterAlarmScore extends RecyclerView.Adapter<AdapterAlarmScore.Cu
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
+
+       holder.mButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Toast.makeText(mContext,mDataSet.get(position),Toast.LENGTH_SHORT).show();
+
+           }
+       });
 
     }
 

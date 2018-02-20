@@ -43,13 +43,16 @@
             android:text="TextView"
             />
 
-        <Spinner
+        <ImageButton
             android:id="@+id/spinnernumber_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.6"
-            android:gravity="start"
-            android:textAlignment="textStart"/>
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+            android:background="@color/backgroundColor"
+
+
+            />
 
     </LinearLayout>
 

@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mcaredemo.mitu.mcaredemoproject.DetailsFragment">
+    tools:context="com.mcaredemo.mitu.mcaredemoproject.AlarmFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="5.6"
+        android:weightSum="6"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,14 +30,12 @@
             android:layout_height="0dp"
             android:layout_weight=".6"
             android:text="@string/rules_answer"
-            app:layout_constraintBottom_toTopOf="@+id/textViewtitle_2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:textSize="8sp"
             android:textColor="@color/loginButton"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
 
 
         <TextView
@@ -45,12 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight=".01"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerViewScore_1"
-            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+
             android:background="@color/bottomButton"
              />
 
@@ -59,20 +52,25 @@
             android:id="@+id/recyclerViewScore_1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewtitle_2"
-            app:layout_constraintBottom_toTopOf="@+id/buttoncommunity_1"
+            android:layout_weight="4.8"
+
             />
 
+        <TextView
+            android:id="@+id/textViewtitle_3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".01"
+            android:layout_marginBottom="2dp"
 
+            android:background="@color/bottomButton"
+            />
 
         <LinearLayout
             android:id="@+id/buttoncommunity_1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".4"
+            android:layout_weight=".6"
             android:weightSum="3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +86,10 @@
                 android:text="অগ্রগতি"
                 android:textColor="@color/backgroundColor"
                 android:layout_margin="2dp"
+                android:drawablePadding="2dp"
                 android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_show_chart_black_24dp"
+                android:drawableTint="@color/backgroundColor"
                 android:background="@drawable/button_border_focus_layout"/>
 
             <Button
@@ -96,10 +97,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="নতুন সমস্যা"
+                android:text="নতুন\n সমস্যা"
                 android:textColor="@color/backgroundColor"
                 android:layout_margin="2dp"
+                android:drawablePadding="2dp"
                 android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_add_black_24dp"
+                android:drawableTint="@color/backgroundColor"
 
                 android:background="@drawable/button_border_focus_layout"/>
 
@@ -109,10 +113,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="জরুরী সমস্যা"
+                android:text="জরুরী \nসমস্যা"
                 android:textColor="@color/backgroundColor"
                 android:layout_margin="2dp"
                 android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawablePadding="2dp"
+                android:drawableTint="@color/backgroundColor"
                 android:background="@drawable/button_border_focus_layout"/>
 
 
