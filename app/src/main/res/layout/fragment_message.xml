@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/backgroundColor"
+app:layout_behavior="@string/appbar_scrolling_view_behavior"
+tools:context="com.mcaredemo.mitu.mcaredemoproject.MessageFragment">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6"
+    app:layout_constraintBottom_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:id="@+id/mainLayoutMessageFrag"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".3"
+        android:text="বিস্তারিত বর্ণনা"
+        android:paddingLeft="8dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/loginButton"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bottomButton"
+        android:layout_weight=".01"
+        android:layout_marginBottom="8dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.1"
+        android:padding="8dp"
+        android:layout_gravity="left"
+        android:background="@drawable/border"
+        android:gravity="left"
+        android:hint="এখানে লিখুন ..."/>
+
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:text="সেন্ড"
+        android:layout_weight=".6"
+        android:layout_gravity="right"
+        android:background="@drawable/button_border_focus_layout"
+        android:textColor="@color/backgroundColor"
+        android:textStyle="bold"
+        android:drawableRight="@drawable/ic_menu_send"
+        android:drawableTint="@color/backgroundColor"
+        android:drawablePadding="4dp"
+        android:layout_marginTop="4dp"
+
+        />
+
+
+
+</LinearLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,10 +1,16 @@
 package com.mcaredemo.mitu.mcaredemoproject;
 
 
+import android.Manifest;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,6 +32,8 @@ public class AlarmFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
+    private static final int MAKE_CALL_PERMISSION_REQUEST_CODE = 1;
+
     Button btnprogress , btnEmergency , btnNewProblem;
     private String[] mDataset = {"একই শব্দের পুনরাবৃতি",
             "অর্থহীন শব্দের ব্যবহার্‌ ",
@@ -89,6 +97,9 @@ public class AlarmFragment extends Fragment {
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
+
+
+
             }
         });
 
@@ -99,14 +110,35 @@ public class AlarmFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Fragment fragment = new NewSpecificScoreFragment();
+                /*Fragment fragment = new NewSpecificScoreFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.containerHome, fragment);
                 fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
+
+                String phoneNumber = "555";
+
+                if (!phoneNumber.isEmpty()) {
+                    if (checkPermission(Manifest.permission.CALL_PHONE)) {
+                        String dial = "tel:" + phoneNumber;
+                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+                    } else {
+                        Toast.makeText(getActivity(), "Permission Call Phone denied", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getActivity(), "Enter a phone number", Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
+
+        if (checkPermission(Manifest.permission.CALL_PHONE)) {
+            btnEmergency.setEnabled(true);
+        } else {
+            btnEmergency.setEnabled(false);
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE}, MAKE_CALL_PERMISSION_REQUEST_CODE);
+        }
 
 
         btnNewProblem.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +147,13 @@ public class AlarmFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(getActivity(), LoginActivity.class));
+//                startActivity(new Intent(getActivity(), LoginActivity.class));
+
+                Fragment fragment = new MessageFragment();
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.containerHome, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
 
 
             }
@@ -124,5 +162,21 @@ public class AlarmFragment extends Fragment {
     }
 
 
+
+    private boolean checkPermission(String permission) {
+        return ContextCompat.checkSelfPermission(getActivity(), permission) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch(requestCode) {
+            case MAKE_CALL_PERMISSION_REQUEST_CODE :
+                if (grantResults.length > 0 && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    btnEmergency.setEnabled(true);
+                    Toast.makeText(getActivity(), "You can call the number by clicking on the button", Toast.LENGTH_SHORT).show();
+                }
+                return;
+        }
+    }
 
 }
