@@ -1,0 +1,98 @@
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        tools:context="com.mcaredemo.mitu.mcaredemoproject.BiWeeklyFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="9"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardViewSpecificScore"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="2dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="2dp"
+                android:layout_weight=".7"
+                app:cardBackgroundColor="@color/cardview_shadow_end_color">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="গত দুই সপ্তাহে আপনার সন্তানের সমস্যা গুলোর রিপোর্ট"
+                    android:id="@+id/textViewsepcific"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    />
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewbiweekly"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3.5"
+
+                />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="2dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="2dp"
+                android:layout_weight=".4"
+               app:cardBackgroundColor="@color/cardview_shadow_end_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center"
+            android:text="জেনে রাখা ভালা"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewgoodtoknow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3.5"
+
+                />
+
+
+
+        </LinearLayout>
+
+        </ScrollView>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>

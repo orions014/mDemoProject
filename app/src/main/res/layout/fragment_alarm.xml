@@ -113,11 +113,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="জরুরী \n টেলিযোগ"
+                android:text="দ্বিসাপ্তাহিক \n রিপোর্ট"
                 android:textColor="@color/backgroundColor"
                 android:layout_margin="2dp"
                 android:textStyle="bold"
-                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                android:drawableLeft="@drawable/ic_timeline_black_24dp"
                 android:drawablePadding="2dp"
                 android:drawableTint="@color/backgroundColor"
                 android:background="@drawable/button_border_focus_layout"/>
