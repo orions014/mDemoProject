@@ -87,13 +87,17 @@ public class AlarmFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Fragment fragment = new NewSpecificScoreFragment();
+              /*  Fragment fragment = new NewSpecificScoreFragment();
+                FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.containerHome, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();*/
+
+                Fragment fragment = new DetailsFragment();
                 FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
                 fragmentTransaction.add(R.id.containerHome, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-
-
 
 
             }

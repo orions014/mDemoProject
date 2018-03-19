@@ -32,13 +32,11 @@ public class AdapterOfDetailsFragment extends RecyclerView.Adapter<AdapterOfDeta
 
     public static class CustomViewHolder extends RecyclerView.ViewHolder {
         private TextView mNameTextView;
-        private CardView mCArdView;
 
 
         public CustomViewHolder(View view){
             super(view);
-            mNameTextView = (TextView) view.findViewById(R.id.problemTextView);
-            mCArdView = (CardView) view.findViewById(R.id.cardViewdetails);
+            mNameTextView = (TextView) view.findViewById(R.id.problemTextViewScore_11);
         }
 
 
@@ -53,29 +51,7 @@ public class AdapterOfDetailsFragment extends RecyclerView.Adapter<AdapterOfDeta
     @Override
     public void onBindViewHolder(CustomViewHolder holder, final int position) {
         holder.mNameTextView.setText(mDataSet.get(position));
-        holder.mCArdView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext,mDataSet.get(position),Toast.LENGTH_SHORT).show();
 
-                Fragment fragment = new SpecificScoreFragment();
-                Bundle bundle = new Bundle();
-
-                bundle.putInt("positionOfProblem",position);
-                fragment.setArguments(bundle);
-//
-
-               // FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = ((MainActivity) mContext).getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.containerHome, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-
-
-
-
-            }
-        });
 
     }
 
