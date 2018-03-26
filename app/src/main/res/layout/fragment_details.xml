@@ -30,7 +30,7 @@
         android:layout_height="0dp"
         android:layout_weight=".3"
         android:layout_marginBottom="8dp"
-        android:text="মাইলস্টোন রিপোর্ট সার্ভে"
+        android:text="মাইলস্টোন সার্ভে"
         android:textAlignment="center"
         android:textColor="@color/bottomButton"
         app:layout_constraintBottom_toTopOf="@+id/homeRecycler"
@@ -42,7 +42,7 @@
         android:id="@+id/homeRecycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="5.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewtitle"
@@ -51,16 +51,7 @@
 
 
 
-    <Button
-        android:id="@+id/buttoncommunity"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".6"
-        android:text="কনফার্ম করুন"
-        app:layout_constraintBottom_toBottomOf= "parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeRecycler" />
+
 
 
 

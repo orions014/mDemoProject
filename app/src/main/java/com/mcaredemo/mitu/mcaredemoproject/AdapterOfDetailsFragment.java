@@ -1,10 +1,13 @@
 package com.mcaredemo.mitu.mcaredemoproject;
 
+import android.app.Activity;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,6 +27,7 @@ public class AdapterOfDetailsFragment extends RecyclerView.Adapter<AdapterOfDeta
 
     private List<String> mDataSet;
     private Context mContext;
+    DetailsFragment fragmentOne;
     public AdapterOfDetailsFragment(Context context, List<String>mDataSet) {
         this.mDataSet = mDataSet;
         mContext  = context;
@@ -51,6 +55,27 @@ public class AdapterOfDetailsFragment extends RecyclerView.Adapter<AdapterOfDeta
     @Override
     public void onBindViewHolder(CustomViewHolder holder, final int position) {
         holder.mNameTextView.setText(mDataSet.get(position));
+
+
+        holder.mNameTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+
+                MyAlertDialogFragment newFragment = MyAlertDialogFragment.newInstance();
+                newFragment.show(((MainActivity)mContext).getSupportFragmentManager(),"Title");
+
+               /* MyAlertDialogFragment newFragment1 = MyAlertDialogFragment.newInstance();
+                newFragment1.show(((AppCompatActivity)mContext).getSupportFragmentManager(),"Title");
+*/
+                //Fragment myFragment = new MyFragment();
+                //activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+
+            }
+        });
 
 
     }
